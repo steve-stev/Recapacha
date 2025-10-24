@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You Human?</title>
+</head>
+<body>
+    
+  <h1>Are you human?</h1>
+  <button onclick="go()">Confirm</button>
+  <h2 id="tries">Tries</h2>
+
+  <script>
+    let triesn = 1;
+    let tries = document.getElementById("tries");
+
+    // This function asks a funny follow-up question
+    function joke() {
+      let mr = prompt("Wait... are you Mr. Suplivy?!?! (y/n)");
+      if (mr == "y") {
+        alert("∴ I SHOULD RUN ∵ YOU ARE SCARY");
+      }
+        else{
+            alert("∴ I am safe")
+        }
+    }
+
+    // Main function that runs when the button is clicked
+    function go() {
+      let question = prompt("To prove this, please type: I am human"); 
+      if (question == "I am human") {
+        alert("ok, you are human");
+        tries.textContent = "Good Job";
+        joke(); // call the other function
+      } else {
+        alert("NOPE, you are not a human (click the button to try again)");
+        tries.textContent = "Tries: " + triesn;
+        triesn = triesn + 1;
+      }
+    }
+  </script>
+</body>
+</html>
